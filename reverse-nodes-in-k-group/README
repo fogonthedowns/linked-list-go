@@ -1,0 +1,29 @@
+head 
+⌄
+1-2-3-4-5 k=2
+
+// first we find the 2 nodes that we need to reverse.
+
+  ktail/head
+  ⌄ 
+2-1      3-4-5  
+^
+revHead
+
+The ktail variable wasn't set before, now it points to the tail of the reversed set of k nodes.
+
+revHead   head 
+⌄         ⌄      
+2-1       3-4-5
+  ^
+  ktail 
+
+Again, we found 2 more does to reverse.
+
+newHead   revHead
+⌄         ⌄ 
+2-1-------4-3        5
+  ^         ^
+  ktail     head 
+
+At the above point, we need to connect the previous set of reversed k nodes and the current set. We set the ktail next pointer to revHead and set the ktail to point to head.
